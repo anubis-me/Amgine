@@ -1,8 +1,8 @@
 <!-- Heading -->
 <div class="row text-center">
     <div class="container">
-        <h2 class="section-heading">User Management</h2>
-        <h3 class="section-subheading text-muted">Hello <strong>{{ main.username }}, </strong>This page allows you to edit and delete users.</h3>
+        <h2 class="section-heading">LeaderBoard / Admin Panel</h2>
+        <h3 class="section-subheading text-muted">Hello <strong>{{ main.username }}, </strong>This page allows you to see different players.</h3>
     </div>
 </div>
 <!-- Heading -->
@@ -84,7 +84,7 @@
 <div class="panel panel-primary">
     <!-- Heading -->
     <div class="panel-heading">
-        <strong>User Management</strong>
+        <strong>Leaderboard / Admin Panel</strong>
     </div>
     <!-- Start: Table -->
     <table class="table">
@@ -99,9 +99,10 @@
             <td>{{ person.email }}</td>
             <td>
                 <!-- Edit Button -->
-                <a href="/edit/{{ person._id }}">
-                    <button type="button" ng-show="management.editAccess" class="btn btn-primary">Edit</button>
-                </a>
+               <!-- <a href="/edit/{{ person._id }}">
+                   <button type="button" ng-show="management.editAccess" class="btn btn-primary">Edit</button>
+                  </a>
+                -->
                 <!-- Delete Button -->
                 <button type="button" ng-click="management.deleteUser(person.username);" ng-show="management.deleteAccess" class="btn btn-danger">Delete</button>
             </td>
@@ -115,6 +116,7 @@
 <br>
 
 <!-- Input For Filter  -->
+<!--
 <div>
     <div class="col-lg-6">
         <div class="input-group">
@@ -123,34 +125,35 @@
         </div>
     </div>
 </div>
-
+-->
 <!-- Container: Start -->
+<!--
 <div class="container">
 
     <!-- Apply Button Filter -->
-    <button type="button" ng-click="management.showMore(number);" class="btn btn-success">Apply Filter</button>
+<!--    <button type="button" ng-click="management.showMore(number);" class="btn btn-success">Apply Filter</button>
 
     <!--/ Show All Button -->
-    <button type="button" ng-click="management.showAll();" class="btn btn-warning">Show All</button>
+    <!--<button type="button" ng-click="management.showAll();" class="btn btn-warning">Show All</button>
     <!-- Input For Filter  -->
 
     <!-- Simple Search Bar -->
-    <div class="navbar-form">
+   <!-- <div class="navbar-form">
         <div class="form-group">
             <!-- Search Input -->
-            <input type="text" class="form-control" name="search" placeholder="search for..." ng-model="searchKeyword">
+       <!--     <input type="text" class="form-control" name="search" placeholder="search for..." ng-model="searchKeyword">
         </div>
         <!-- Serach Button -->
-        <button type="button" ng-click="management.search(searchKeyword, number);" class="btn btn-default">Search</button>
+        <!--<button type="button" ng-click="management.search(searchKeyword, number);" class="btn btn-default">Search</button>
         <!-- Clear Button -->
-        <button type="button" ng-click="management.clear();" class="btn btn-default">Clear</button>
+        <!--<button type="button" ng-click="management.clear();" class="btn btn-default">Clear</button>
         <!-- Advanced Search Button -->
-        <a href="/search">
+        <!--<a href="/search">
             <button type="button" class="btn btn-default">Advanced Search</button>
         </a>
     </div>
     <!-- Simple Search Bar /-->
-</div>
+<!--</div>
 <!-- Container: End -->
 
 <br>
