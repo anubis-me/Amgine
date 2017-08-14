@@ -19,7 +19,7 @@ app.use('/api', appRoutes); // Assign name to end points (e.g., '/api/management
 // 
 // <---------- REPLACE WITH YOUR MONGOOSE CONFIGURATION ---------->
 // 
-mongoose.connect('mongodb://root:password@ds027215.mlab.com:27215/gugui3z24', function(err) {
+mongoose.connect('mongodb://abhi:1234@ds131742.mlab.com:31742/mean', function(err) {
     if (err) {
         console.log('Not connected to the database: ' + err); // Log to console if unable to connect to database
     } else {

@@ -7,12 +7,12 @@ var sgTransport = require('nodemailer-sendgrid-transport'); // Import Nodemailer
 module.exports = function(router) {
 
     // Start Sendgrid Configuration Settings (Use only if using sendgrid)
-    // var options = {
-    //     auth: {
-    //         api_user: 'dbrian332', // Sendgrid username
-    //         api_key: 'PAssword123!@#' // Sendgrid password
-    //     }
-    // };
+    var options = {
+         auth: {
+                api_user: 'abhinow3006',
+                api_key: '9411362263a'
+        }
+     };
 
     // Nodemailer options (use with g-mail or SMTP)
     var client = nodemailer.createTransport({
