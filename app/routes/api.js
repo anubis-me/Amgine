@@ -16,16 +16,16 @@ module.exports = function(router) {
 
     // Nodemailer options (use with g-mail or SMTP)
 
-    var client = nodemailer.createTransport({
-    service: 'Zoho',
-      auth: {
-       user: 'abhilashg179@gmail.com', // Your email address
-         pass: '9411362263Ab@' // Your password
-       },
-       tls: { rejectUnauthorized: false }
-    });
+    //var client = nodemailer.createTransport({
+    //service: 'Zoho',
+      //auth: {
+       //user: 'abhilashg179@gmail.com', // Your email address
+         //pass: '9411362263Ab@' // Your password
+       //},
+       //tls: { rejectUnauthorized: false }
+    //});
 
-    //var client = nodemailer.createTransport(sgTransport(options)); // Use if using sendgrid configuration
+    var client = nodemailer.createTransport(sgTransport(options)); // Use if using sendgrid configuration
     // End Sendgrid Configuration Settings  
 
     // Route to register new users  
@@ -75,8 +75,8 @@ module.exports = function(router) {
                         from:  'AMGINE-"Cryptic Hunt"',
                         to: [user.email,  'abhilashg179@gmail.com'],
                         subject: 'Your Activation Link',
-                        text: 'Hello ' + user.name + ', thank you for registering at localhost.com. Please click on the following link to complete your activation: http://www.herokutestapp3z24.com/activate/' + user.temporarytoken,
-                        html: 'Hello<strong> ' + user.name + '</strong>,<br><br>Thank you for registering at localhost.com. Please click on the link below to complete your activation:<br><br><a href="http://www.herokutestapp3z24.com/activate/' + user.temporarytoken + '">http://www.herokutestapp3z24.com/activate/</a>'
+                        text: 'Hello ' + user.name + ', thank you for registering at amgine.com. Please click on the following link to complete your activation: http://amgine.herokuapp.com/activate/' + user.temporarytoken,
+                        html: 'Hello<strong> ' + user.name + '</strong>,<br><br>Thank you for registering at amgine. Please click on the link below to complete your activation:<br><br><a href="http://amgine.herokuapp.com/activate/' + user.temporarytoken + '">http://amgine.herokuapp.com/activate/</a>'
                     };
                     // Function to send e-mail to the user
                     client.sendMail(email, function(err, info) {
