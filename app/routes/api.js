@@ -16,16 +16,16 @@ module.exports = function(router) {
 
     // Nodemailer options (use with g-mail or SMTP)
 
-    //var client = nodemailer.createTransport({
-    //service: 'Zoho',
-      //auth: {
-       //user: 'abhilashg179@gmail.com', // Your email address
-         //pass: '9411362263Ab@' // Your password
-       //},
-       //tls: { rejectUnauthorized: false }
-    //});
+    var client = nodemailer.createTransport({
+    service: 'Zoho',
+      auth: {
+      user: 'abhilashg179@gmail.com', // Your email address
+         pass: '9411362263Ab@' // Your password
+       },
+       tls: { rejectUnauthorized: false }
+    });
 
-    var client = nodemailer.createTransport(sgTransport(options)); // Use if using sendgrid configuration
+    //var client = nodemailer.createTransport(sgTransport(options)); // Use if using sendgrid configuration
     // End Sendgrid Configuration Settings  
 
     // Route to register new users  
