@@ -98,8 +98,18 @@
             </div>
         </div>
     </header>
+    <div class="container">
+        <div class="intro-text">
+            <a ng-show="!main.isLoggedIn" href="/login" class="page-scroll btn btn-xl">Sign In</a>
+            <a ng-show="!main.isLoggedIn" href="/register" class="page-scroll btn twitterbtn">Register</a>
+            <a ng-show="main.isLoggedIn" href="#" ng-click="main.logout();" class="page-scroll btn btn-xl">Logout</a>
+            <a ng-show="main.isLoggedIn && main.authorized" href="/management" class="page-scroll btn facebookbtn">View</a>
 
-    <section id="services">
+        </div>
+    </div>
+
+
+        <section id="services">
         <div class="container">
             <div class="row">
 
