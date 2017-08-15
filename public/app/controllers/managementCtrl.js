@@ -27,9 +27,9 @@ angular.module('managementController', [])
                     if (data.data.permission === 'admin') {
                         app.editAccess = true; // Show edit button
                         app.deleteAccess = true; // Show delete button
-                    } else if (data.data.permission === 'moderator') {
-                        app.editAccess = true; // Show edit button
-                    }
+                    }// else if (data.data.permission === 'moderator') {
+                     //   app.editAccess = true; // Show edit button
+                   // }
                 } else {
                     app.errorMsg = 'Insufficient Permissions'; // Reject edit and delete options
                     app.loading = false; // Stop loading icon
