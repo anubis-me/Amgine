@@ -35,10 +35,11 @@ module.exports = function(router) {
         user.password = req.body.password; // Save password from request to User object
         user.email = req.body.email; // Save email from request to User object
         user.name = req.body.name; // Save name from request to User object
+        user.organization = req.body.organization;//Save University from request to User object
         user.temporarytoken = jwt.sign({ username: user.username, email: user.email }, secret, { expiresIn: '24h' }); // Create a token for activating account through e-mail
 
         // Check if request is valid and not empty or null
-        if (req.body.username === null || req.body.username === '' || req.body.password === null || req.body.password === '' || req.body.email === null || req.body.email === '' || req.body.name === null || req.body.name === '') {
+        if (req.body.username === null || req.body.username === '' || req.body.password === null || req.body.password === '' || req.body.email === null || req.body.email === '' || req.body.name === null || req.body.name === ''|| req.body.organization === null || req.body.organization === '') {
             res.json({ success: false, message: 'Ensure username, email, and password were provided' });
         } else {
             // Save new user to database

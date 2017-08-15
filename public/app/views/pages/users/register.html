@@ -88,6 +88,17 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
+                                <!-- Organization Div -->
+                                <div >
+                                    <!-- Username Input -->
+                                    <label>Organization:</label>
+                                    <input ng-disabled="register.disabled" class="form-control" type="text" name="Organization" placeholder="Organiation *" ng-model="register.regData.organization" ng-minlength="3" ng-maxlength="25"   required>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
                                 <!-- Password Div -->
                                 <div ng-class="{ 'has-success':(regForm.firstPassword.$valid && !regForm.firstPassword.$pristine), 'has-error':(!regForm.firstPassword.$valid && !regForm.firstPassword.$pristine) || (!regForm.firstPassword.$valid && regForm.$submitted) }">
                                     <!-- Password Input -->

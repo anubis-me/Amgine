@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'); // Import Mongoose Package
-var Schema = mongoose.Schema; // Assign Mongoose Schema function to variable
-var bcrypt = require('bcrypt-nodejs'); // Import Bcrypt Package
-var titlize = require('mongoose-title-case'); // Import Mongoose Title Case Plugin
+var Schema   = mongoose.Schema; // Assign Mongoose Schema function to variable
+var bcrypt   = require('bcrypt-nodejs'); // Import Bcrypt Package
+var titlize  = require('mongoose-title-case'); // Import Mongoose Title Case Plugin
 var validate = require('mongoose-validator'); // Import Mongoose Validator Plugin
 
 // User Name Validator
@@ -68,7 +68,8 @@ var UserSchema = new Schema({
     active: { type: Boolean, required: true, default: false },
     temporarytoken: { type: String, required: true },
     resettoken: { type: String, required: false },
-    permission: { type: String, required: true, default: 'moderator' }
+    permission: { type: String, required: true, default: 'moderator' },
+    organization:{type:String, required:true}
 });
 
 // Middleware to ensure password is encrypted before saving user to database
