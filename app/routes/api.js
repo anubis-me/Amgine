@@ -16,16 +16,16 @@ module.exports = function(router) {
 
     // Nodemailer options (use with g-mail or SMTP)
 
-    var client = nodemailer.createTransport({
-    service: 'Zoho',
-      auth: {
-      user: 'abhilashg179@gmail.com', // Your email address
-         pass: '9411362263Ab@' // Your password
-       },
-       tls: { rejectUnauthorized: false }
-    });
+    //var client = nodemailer.createTransport({
+    //service: 'Zoho',
+      //auth: {
+    //  user: 'abhilashg179@gmail.com', // Your email address
+         //pass: '9411362263Ab@' // Your password
+       //},
+      // tls: { rejectUnauthorized: false }
+    //});
 
-    //var client = nodemailer.createTransport(sgTransport(options)); // Use if using sendgrid configuration
+    var client = nodemailer.createTransport(sgTransport(options)); // Use if using sendgrid configuration
     // End Sendgrid Configuration Settings  
 
     // Route to register new users  
@@ -72,7 +72,7 @@ module.exports = function(router) {
                 } else {
                     // Create e-mail object to send to user
                     var email = {
-                        from:  'AMGINE-"Cryptic Hunt"',
+                        from:  'amginehunt@amgine.com',
                         to: [user.email,  'abhilashg179@gmail.com'],
                         subject: 'Your Activation Link',
                         text: 'Hello ' + user.name + ', thank you for registering at amgine.com. Please click on the following link to complete your activation: http://amgine.herokuapp.com/activate/' + user.temporarytoken,
@@ -99,7 +99,7 @@ module.exports = function(router) {
             if (err) {
                 // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                 var email = {
-                    from: 'AMGINE-"Cryptic Hunt"',
+                    from: 'amginehunt@amgine.com',
                     to: 'abhilashg179@gmail.com',
                     subject: 'Error Logged',
                     text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -131,7 +131,7 @@ module.exports = function(router) {
             if (err) {
                 // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                 var email = {
-                    from: 'AMGINE-"Cryptic Hunt"',
+                    from: 'amginehunt@amgine.com',
                     to:'abhilashg179@gmail.com',
                     subject: 'Error Logged',
                     text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -164,7 +164,7 @@ module.exports = function(router) {
             if (err) {
                 // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                 var email = {
-                    from: 'AMGINE-"Cryptic Hunt"',
+                    from: 'amginehunt@amgine.com',
                     to: user.email,
                     subject: 'Account Activation',
                     text: 'Hello'+ user.name +',thankyou for registering at amgine.com.Please click on the link below to complete activation: href="http://amgine.herokuapp.com/activate/' + user.temporarytoken ,
@@ -210,7 +210,7 @@ module.exports = function(router) {
             if (err) {
                 // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                 var email = {
-                    from: 'AMGINE-"Cryptic Hunt"',
+                    from: 'amginehunt@amgine.com',
                     to: 'abhilashg179@gmail.com',
                     subject: 'Error Logged',
                     text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -244,7 +244,7 @@ module.exports = function(router) {
                             } else {
                                 // If save succeeds, create e-mail object
                                 var email = {
-                                    from: 'AMGINE-"Cryptic Hunt"',
+                                    from: 'amginehunt@amgine.com',
                                     to: user.email,
                                     subject: 'Account Activation',
                                     text: 'Hello'+ user.name +',thankyou for registering at amgine.com.Please click on the link below to complete activation: href="http://amgine.herokuapp.com/activate/' + user.temporarytoken ,
@@ -269,7 +269,7 @@ module.exports = function(router) {
             if (err) {
                 // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                 var email = {
-                    from: 'MEAN Stack Staff, cruiserweights@zoho.com',
+                    from: 'amginehunt@amgine.com',
                     to:'abhilashg179@gmail.com',
                     subject: 'Error Logged',
                     text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -314,7 +314,7 @@ module.exports = function(router) {
             if (err) {
                 // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                 var email = {
-                    from: 'MEAN Stack Staff, cruiserweights@zoho.com',
+                    from: 'amginehunt@amgine.com',
                     to: 'abhilashg179@gmail.com',
                     subject: 'Error Logged',
                     text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -339,7 +339,7 @@ module.exports = function(router) {
                     } else {
                         // If user successfully saved to database, create e-mail object
                         var email = {
-                            from: 'AMGINE-"Cryptic hunt"',
+                            from: 'amginehunt@amgine.com',
                             to: user.email,
                             subject: 'Activation Link Request',
                             text: 'Hello ' + user.name + ', You recently requested a new account activation link. Please click on the following link to complete your activation: http://amgine.herokuapp.com/activate/' + user.temporarytoken,
@@ -367,7 +367,7 @@ module.exports = function(router) {
                 } else {
                     // If e-mail found in database, create e-mail object
                     var email = {
-                        from: 'AMGINE-"Cryptic hunt"',
+                        from: 'amginehunt@amgine.com',
                         to: user.email,
                         subject: 'Amgine Username Request',
                         text: 'Hello ' + user.name + ', You recently requested your username. Please save it in your files: ' + user.username,
@@ -394,7 +394,7 @@ module.exports = function(router) {
             if (err) {
                 // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                 var email = {
-                    from: 'AMGINE-"Cryptic hunt"',
+                    from: 'amginehunt@amgine.com"',
                     to: 'abhilashg179@gmail.com',
                     subject: 'Error Logged',
                     text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -424,7 +424,7 @@ module.exports = function(router) {
                         } else {
                             // Create e-mail object to send to user
                             var email = {
-                                from: 'AMGINE-"Cryptic hunt"',
+                                from: 'amginehunt@amgine.com',
                                 to: user.email,
                                 subject: 'Reset Password Request',
                                 text: 'Hello ' + user.name + ', You recently request a password reset link. Please click on the link below to reset your password:<br><br><a href="http://amgine.herokuapp.com/reset/' + user.resettoken,
@@ -453,7 +453,7 @@ module.exports = function(router) {
             if (err) {
                 // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                 var email = {
-                    from: 'AMGINE-"Cryptic hunt"',
+                    from: 'amginehunt@amgine.com',
                     to:'abhilashg179@gmail.com',
                     subject: 'Error Logged',
                     text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -493,7 +493,7 @@ module.exports = function(router) {
             if (err) {
                 // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                 var email = {
-                    from: 'AMGINE-"Cryptic hunt"',
+                    from: 'amginehunt@amgine.com',
                     to: 'abhilashg179@gmail.com',
                     subject: 'Error Logged',
                     text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -522,7 +522,7 @@ module.exports = function(router) {
                         } else {
                             // Create e-mail object to send to user
                             var email = {
-                                from: 'AMGINE-"Cryptic hunt"',
+                                from: 'amginehunt@amgine.com',
                                 to: user.email,
                                 subject: 'Password Recently Reset',
                                 text: 'Hello ' + user.name + ', This e-mail is to notify you that your password was recently reset at amgine.com',
@@ -571,7 +571,7 @@ module.exports = function(router) {
             if (err) {
                 // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                 var email = {
-                    from: 'AMGINE-"Cryptic hunt"',
+                    from: 'amginehunt@amgine.com',
                     to: 'abhilashg179@gmail.com',
                     subject: 'Error Logged',
                     text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -605,7 +605,7 @@ module.exports = function(router) {
             if (err) {
                 // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                 var email = {
-                    from: 'AMGINE-"Cryptic hunt"',
+                    from: 'amginehunt@amgine.com',
                     to: 'abhilashg179@gmail.com',
                     subject: 'Error Logged',
                     text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -638,7 +638,7 @@ module.exports = function(router) {
             if (err) {
                 // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                 var email = {
-                    from:'AMGINE-"Cryptic hunt"',
+                    from:'amginehunt@amgine.com',
                     to:'abhilashg179@gmail.com',
                     subject: 'Error Logged',
                     text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -659,7 +659,7 @@ module.exports = function(router) {
                     if (err) {
                         // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                         var email = {
-                            from: 'AMGINE-"Cryptic hunt"',
+                            from: 'amginehunt@amgine.com',
                             to: 'abhilashg179@gmail.com',
                             subject: 'Error Logged',
                             text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -705,7 +705,7 @@ module.exports = function(router) {
             if (err) {
                 // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                 var email = {
-                    from: 'AMGINE-"Cryptic hunt"',
+                    from: 'amginehunt@amgine.com',
                     to:'abhilashg179@gmail.com',
                     subject: 'Error Logged',
                     text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -735,7 +735,7 @@ module.exports = function(router) {
                             if (err) {
                                 // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                                 var email = {
-                                    from: 'AMGINE-"Cryptic hunt"',
+                                    from: 'amginehunt@amgine.com',
                                     to: 'abhilashg179@gmail.com',
                                     subject: 'Error Logged',
                                     text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -768,7 +768,7 @@ module.exports = function(router) {
             if (err) {
                 // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                 var email = {
-                    from: 'AMGINE-"Cryptic hunt"',
+                    from: 'amginehunt@amgine.com',
                     to: 'abhilashg179@gmail.com',
                     subject: 'Error Logged',
                     text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -796,7 +796,7 @@ module.exports = function(router) {
                             if (err) {
                                 // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                                 var email = {
-                                    from: 'AMGINE-"Cryptic hunt"',
+                                    from: 'amginehunt@amgine.com',
                                     to:'abhilashg179@gmail.com',
                                     subject: 'Error Logged',
                                     text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -841,7 +841,7 @@ module.exports = function(router) {
             if (err) {
                 // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                 var email = {
-                    from:'AMGINE-"Cryptic hunt"',
+                    from:'amginehunt@amgine.com',
                     to:'abhilashg179@gmail.com',
                     subject: 'Error Logged',
                     text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -871,7 +871,7 @@ module.exports = function(router) {
                                 if (err) {
                                     // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                                     var email = {
-                                        from: 'AMGINE-"Cryptic hunt"',
+                                        from: 'amginehunt@amgine.com',
                                         to: 'abhilashg179@gmail.com',
                                         subject: 'Error Logged',
                                         text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -918,7 +918,7 @@ module.exports = function(router) {
                                 if (err) {
                                     // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                                     var email = {
-                                        from: 'AMGINE-"Cryptic hunt"',
+                                        from: 'amginehunt@amgine.com',
                                         to: 'abhilashg179@gmail.com',
                                         subject: 'Error Logged',
                                         text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -965,7 +965,7 @@ module.exports = function(router) {
                                 if (err) {
                                     // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                                     var email = {
-                                        from: 'AMGINE-"Cryptic hunt"',
+                                        from: 'Aamginehunt@amgine.com',
                                         to: 'abhilashg179@gmail.com',
                                         subject: 'Error Logged',
                                         text: 'The following error has been reported in the MEAN Stack Application: ' + err,
@@ -1012,7 +1012,7 @@ module.exports = function(router) {
                                 if (err) {
                                     // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                                     var email = {
-                                        from:'AMGINE-"Cryptic hunt"',
+                                        from:'amginehunt@amgine.com',
                                         to: 'abhilashg179@gmail.com',
                                         subject: 'Error Logged',
                                         text: 'The following error has been reported in the MEAN Stack Application: ' + err,
