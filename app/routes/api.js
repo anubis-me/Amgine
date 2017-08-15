@@ -248,8 +248,8 @@ module.exports = function(router) {
                                     from: 'amginehunt@amgine.com',
                                     to: user.email,
                                     subject: 'Account Activation',
-                                    text: 'Hello'+ user.name +',thankyou for registering at amgine.com.Please click on the link below to complete activation: href="http://amgine.herokuapp.com/activate/' + user.temporarytoken ,
-                                    html: 'Hello<strong>'+ user.name +'</strong>,<br><br>Thankyou for registering at amgine.com. Please click on the link below to complete activation:<br> <br> <a href="http://amgine.herokuapp.com/activate/' +user.temporarytoken+ ' ">http://amgine.herokuapp.com/activate</a>'
+                                    text: 'Hello'+ user.name +',thankyou for registering at amgine.com.' ,
+                                    html: 'Hello<strong>'+ user.name +'</strong>,<br><br>Thankyou for registering at amgine.com.'
                                 };
                                 // Send e-mail object to user
                                 client.sendMail(email, function(err, info) {
@@ -791,7 +791,7 @@ module.exports = function(router) {
                     res.json({ success: false, message: 'No user found' }); // Return error
                 } else {
                     // Check if logged in user has editing privileges
-                    if (mainUser.permission === 'admin' || mainUser.permission === 'moderator') {
+                    if (mainUser.permission === 'admin' ) {
                         // Find the user to be editted
                         User.findOne({ _id: editUser }, function(err, user) {
                             if (err) {

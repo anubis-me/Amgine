@@ -14,7 +14,7 @@ angular.module('authServices', [])
 
     // Function to check if user is currently logged in
     authFactory.isLoggedIn = function() {
-        // CHeck if token is in local storage
+        // Check if token is in local storage
         if (AuthToken.getToken()) {
             return true; // Return true if in storage
         } else {
