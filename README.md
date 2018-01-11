@@ -1,6 +1,6 @@
 URL
 https://amgine.herokuapp.com/
-##REPLICA OF ENIGMA
+## REPLICA OF ENIGMA
 ## AMGINE Application
 
 This is an application demonstrating the basic components needed for a Single Page Application using MongoDB, ExpressJS, AngularJS, and NodeJS.
