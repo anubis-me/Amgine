@@ -2,8 +2,6 @@
 
 This is an application demonstrating the basic components needed for a Single Page Application using MongoDB, ExpressJS, AngularJS, and NodeJS.
 
-A working example can be found [here](http://www.herokutestapp3z24.com/). Additionally, a YouTube tutorial series illustrating how to create this application from scratch can be found [here](https://www.youtube.com/playlist?list=PL3vQyqzqjZ637sWpKvniMCxdqZhnMJC1d).
-
 ## Requirements
 
 This application requires installation of NodeJS and MongoDB prior to running.
@@ -23,7 +21,7 @@ $ npm install
 - You must enter your own MongoDB configuration settings in the server.js file:
 
 ```
-mongoose.connect('mongodb://gugui3z24:password@ds055594.mlab.com:55594/diselfuel29', function(err) {
+mongoose.connect('mongodb://.mlab.com:55594/diselfuel29', function(err) {
     if (err) {
         console.log('Not connected to the database: ' + err);
     } else {
@@ -93,8 +91,11 @@ $ npm start server.js
 
 ## Contributors
 
-David Acosta.
+Abhinav Gupta
 
 ## License
 
 No license. 
+
+URL
+https://amgine.herokuapp.com/
