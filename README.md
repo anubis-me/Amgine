@@ -1,4 +1,7 @@
-## MEAN Stack Tutorial Application
+URL
+https://amgine.herokuapp.com/
+##REPLICA OF ENIGMA
+## AMGINE Application
 
 This is an application demonstrating the basic components needed for a Single Page Application using MongoDB, ExpressJS, AngularJS, and NodeJS.
 
@@ -42,14 +45,6 @@ passport.use(new FacebookStrategy({
 ```
 
 ```
-passport.use(new TwitterStrategy({
-        consumerKey: '', // Replace with your Twitter Developer App consumer key
-        consumerSecret: '', // Replace with your Twitter Developer App consumer secret
-        callbackURL: "", // Replace with your Twitter Developer App callback URL
-        userProfileURL: "https://api.twitter.com/1.1/account/verify_credentials.json?include_email=true"
-    }
-```
-
 ```
 passport.use(new GoogleStrategy({
         clientID: '', // Replace with your Google Developer App client ID
@@ -72,14 +67,7 @@ var client = nodemailer.createTransport(sgTransport(options));
 
 - You must also update all e-mail callbacks (links that users click for e-mail activation/password reset, etc.) found in the api.js file:
 
-```
-var email = {
-    from: 'MEAN Stack Staff, staff@localhost.com',
-    to: user.email,
-    subject: 'Reset Password Request',
-    text: 'Hello ' + user.name + ', You recently request a password reset link. Please click on the link below to reset your password:<br><br><a href="https://immense-dusk-71112.herokuapp.com/reset/' + user.resettoken,
-    html: 'Hello<strong> ' + user.name + '</strong>,<br><br>You recently request a password reset link. Please click on the link below to reset your password:<br><br><a href="https://immense-dusk-71112.herokuapp.com/reset/' + user.resettoken + '">https://immense-dusk-71112.herokuapp.com/reset/</a>'
-};
+``
 
 ```
 
@@ -96,6 +84,3 @@ Abhinav Gupta
 ## License
 
 No license. 
-
-URL
-https://amgine.herokuapp.com/
